@@ -1,0 +1,34 @@
+[개발자 책읽기] GoF 의 Design Pattern (n장 패턴)
+
+> 해당 글은 Gang of Four의 **디자인 패턴** 이라는 책을 읽고 학습한 내용을 정리 및 회고하는 글 입니다. 자세한 사항은 [YES 24 GoF의 디자인 패턴](http://www.yes24.com/Product/Goods/17525598) 에서 확인해주세요.
+
+#### **GoF 의 디자인 패턴** - 재사용성을 지닌 객체지향 소프트웨어의 핵심 요소
+
+- 프로텍 미디어
+- 지은이: 에릭 감마, 존 블리사이드스, 리처드 헬름, 랄프 존슨
+- 옮긴이: 김정아
+
+[##_Image|kage@bHHrl7/btrseQcMD8n/Q2lJLQvubF1gPcfkPzVQgk/img.png|CDM|1.3|{"originWidth":1440,"originHeight":1440,"style":"alignCenter","width":490,"height":490}_##]
+
+- 다음 글을 함께 읽으면 좋습니다.
+  - [클래스 다이어그램이란?](https://wonit.tistory.com/600)
+
+---
+
+# xx 패턴
+
+> 정의 설명
+
+- 정의 정리
+
+# 동기
+
+# 패턴에 대해
+
+# 구현
+
+# 장점과 단점
+
+### 장점
+
+### 단점
