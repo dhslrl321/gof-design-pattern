@@ -2,9 +2,12 @@ package p0;
 
 public class Main {
     public static void main(String[] args) {
-        Notificator notificator = new ToastNotificator();
-        Notifier notifier = new Notifier();
+        Meeting firstMeeting = new Meeting("강남 아지트");
+        Meeting secondMeeting = new Meeting("안국 아지트");
 
-        notifier.notify(notificator);
+        Club club = new Club();
+
+        club.addMeeting(firstMeeting);
+        club.addMeeting(secondMeeting);
     }
 }
