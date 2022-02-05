@@ -1,4 +1,4 @@
-[개발자 책읽기] GoF 의 Design Pattern (n장 패턴)
+[개발자 책읽기] Java로 해석한 GoF 의 Design Pattern (n장 패턴)
 
 > 해당 글은 Gang of Four의 **디자인 패턴** 이라는 책을 읽고 학습한 내용을 정리 및 회고하는 글 입니다. 자세한 사항은 [YES 24 GoF의 디자인 패턴](http://www.yes24.com/Product/Goods/17525598) 에서 확인해주세요.
 
