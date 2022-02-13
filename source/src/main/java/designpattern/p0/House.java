@@ -1,4 +1,4 @@
-package p0;
+package designpattern.p0;
 
 public class House {
     private AirConditioner airConditioner;
