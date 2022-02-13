@@ -25,5 +25,8 @@ public class Client {
 
         Button button = application.getButton();
         Menu menu = application.getMenu();
+
+        button.paint();
+        menu.onClick();
     }
 }
