@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="designpattern.creation.factorymethod.RoleFactoryTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-02-19T05:48:10" hostname="trevariui-MacBookPro-2.local" time="0.039">
+  <properties/>
+  <testcase name="member()" classname="designpattern.creation.factorymethod.RoleFactoryTest" time="0.035"/>
+  <testcase name="admin()" classname="designpattern.creation.factorymethod.RoleFactoryTest" time="0.001"/>
+  <testcase name="exception()" classname="designpattern.creation.factorymethod.RoleFactoryTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
