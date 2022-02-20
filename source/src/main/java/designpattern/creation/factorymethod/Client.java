@@ -1,5 +1,7 @@
 package designpattern.creation.factorymethod;
 
+import java.util.Arrays;
+
 public class Client {
     public static void main(String[] args) {
         RoleFactory factory = new RoleFactory();
