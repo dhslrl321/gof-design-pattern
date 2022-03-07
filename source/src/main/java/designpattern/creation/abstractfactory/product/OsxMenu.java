@@ -1,4 +1,4 @@
-package designpattern.creation.dp1abstractfactory.product;
+package designpattern.creation.abstractfactory.product;
 
 public class OsxMenu implements Menu {
     @Override

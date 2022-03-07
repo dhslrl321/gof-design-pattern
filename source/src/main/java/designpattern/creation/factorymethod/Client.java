@@ -1,6 +1,7 @@
 package designpattern.creation.factorymethod;
 
-import java.util.Arrays;
+import designpattern.creation.factorymethod.creator.RoleFactory;
+import designpattern.creation.factorymethod.product.Role;
 
 public class Client {
     public static void main(String[] args) {

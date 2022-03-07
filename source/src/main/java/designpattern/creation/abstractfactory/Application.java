@@ -1,8 +1,8 @@
-package designpattern.creation.dp1abstractfactory;
+package designpattern.creation.abstractfactory;
 
-import designpattern.creation.dp1abstractfactory.factory.AbstractGUIFactory;
-import designpattern.creation.dp1abstractfactory.product.Button;
-import designpattern.creation.dp1abstractfactory.product.Menu;
+import designpattern.creation.abstractfactory.factory.AbstractGUIFactory;
+import designpattern.creation.abstractfactory.product.Button;
+import designpattern.creation.abstractfactory.product.Menu;
 import lombok.Getter;
 import lombok.Setter;
 

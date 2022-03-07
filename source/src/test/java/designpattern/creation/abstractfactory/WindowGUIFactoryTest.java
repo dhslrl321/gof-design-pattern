@@ -1,9 +1,9 @@
-package designpattern.creation.dp1abstractfactory;
+package designpattern.creation.abstractfactory;
 
-import designpattern.creation.dp1abstractfactory.factory.WindowGUIFactory;
-import designpattern.creation.dp1abstractfactory.product.Button;
-import designpattern.creation.dp1abstractfactory.product.OsxButton;
-import designpattern.creation.dp1abstractfactory.product.WindowButton;
+import designpattern.creation.abstractfactory.factory.WindowGUIFactory;
+import designpattern.creation.abstractfactory.product.Button;
+import designpattern.creation.abstractfactory.product.OsxButton;
+import designpattern.creation.abstractfactory.product.WindowButton;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

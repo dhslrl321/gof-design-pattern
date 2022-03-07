@@ -1,5 +1,9 @@
 package designpattern.creation.factorymethod;
 
+import designpattern.creation.factorymethod.creator.RoleFactory;
+import designpattern.creation.factorymethod.product.AdminRole;
+import designpattern.creation.factorymethod.product.MemberRole;
+import designpattern.creation.factorymethod.product.Role;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

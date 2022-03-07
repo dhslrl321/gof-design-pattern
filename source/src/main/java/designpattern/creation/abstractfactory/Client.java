@@ -1,10 +1,10 @@
-package designpattern.creation.dp1abstractfactory;
+package designpattern.creation.abstractfactory;
 
-import designpattern.creation.dp1abstractfactory.factory.AbstractGUIFactory;
-import designpattern.creation.dp1abstractfactory.factory.OsxGUIFactory;
-import designpattern.creation.dp1abstractfactory.factory.WindowGUIFactory;
-import designpattern.creation.dp1abstractfactory.product.Button;
-import designpattern.creation.dp1abstractfactory.product.Menu;
+import designpattern.creation.abstractfactory.factory.AbstractGUIFactory;
+import designpattern.creation.abstractfactory.factory.OsxGUIFactory;
+import designpattern.creation.abstractfactory.factory.WindowGUIFactory;
+import designpattern.creation.abstractfactory.product.Button;
+import designpattern.creation.abstractfactory.product.Menu;
 
 public class Client {
     public static void main(String[] args) {

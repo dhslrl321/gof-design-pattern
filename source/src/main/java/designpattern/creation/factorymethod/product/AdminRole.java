@@ -1,4 +1,4 @@
-package designpattern.creation.factorymethod;
+package designpattern.creation.factorymethod.product;
 
 public class AdminRole implements Role {
 
