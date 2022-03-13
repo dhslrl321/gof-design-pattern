@@ -1,45 +1,28 @@
 package designpattern.creation.builder.director;
 
-import designpattern.creation.builder.CPU;
-import designpattern.creation.builder.GraphicCard;
-import designpattern.creation.builder.Monitor;
-import designpattern.creation.builder.OS;
-import designpattern.creation.builder.builder.ItemBuilder;
 import designpattern.creation.builder.builder.NotebookBuilder;
+import designpattern.creation.builder.product.Notebook;
+import designpattern.creation.builder.product.component.*;
 
 public class Director {
-    /*public void constructMac(ItemBuilder itemBuilder) {
-        itemBuilder.cpu(new CPU());
-        itemBuilder.graphicCard(new GraphicCard());
-//        itemBuilder.monitor(new Monitor());
-        itemBuilder.os(new OS("MAC"));
+    public Notebook macBook2022(NotebookBuilder builder) {
+        builder.cpu(new M1());
+        builder.graphicCard(new Radeon());
+        builder.os(new OSX());
+        return builder.getProduct();
     }
 
-    public void constructWindow(ItemBuilder itemBuilder) {
-        itemBuilder.cpu(new CPU());
-        itemBuilder.graphicCard(new GraphicCard());
-//        itemBuilder.monitor(new Monitor());
-        itemBuilder.os(new OS("WINDOW"));
-    }*/
-
-
-    public void constructMac(ItemBuilder itemBuilder) {
-        if (itemBuilder instanceof NotebookBuilder) {
-            itemBuilder.monitor(new Monitor());
-        } else {
-            itemBuilder.monitor(null);
-
-        }
-
-        itemBuilder.cpu(new CPU());
-        itemBuilder.graphicCard(new GraphicCard());
-        itemBuilder.os(new OS("MAC"));
+    public Notebook macBook2021(NotebookBuilder builder) {
+        builder.cpu(new Intel());
+        builder.graphicCard(new Radeon());
+        builder.os(new OSX());
+        return builder.getProduct();
     }
 
-    public void constructMacWithNotebook(ItemBuilder itemBuilder) {
-        itemBuilder.cpu(new CPU());
-        itemBuilder.graphicCard(new GraphicCard());
-        itemBuilder.monitor(new Monitor());
-        itemBuilder.os(new OS("Windows"));
+    public Notebook samsungGalaxyBook(NotebookBuilder builder) {
+        builder.cpu(new Intel());
+        builder.graphicCard(new GTX1080());
+        builder.os(new Windows());
+        return builder.getProduct();
     }
 }

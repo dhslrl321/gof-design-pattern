@@ -34,16 +34,194 @@
 
 # 구현
 
+[##_Image|kage@C98Hn/btrvJ0QwAh9/vkavUBGLgNUcvPf74o6Ko1/img.png|CDM|1.3|{"originWidth":1254,"originHeight":1222,"style":"alignCenter","width":631,"height":615}_##]
+
 ### 참여 객체
 
 - **Builder**
   - Product 의 생성 단계를 선언해주는 인터페이스로 모든 Builder 의 추상 객체이다
+    - `ItemBuilder`
 - **Director**
   - 특정 Product 를 생성할 수 있도록 구성된 단계를 호출하는 순서를 정의한다
+    - `Director`
 - **ConcreteBuilder**
   - 서로 다른 단계에 따라 객체를 생성할 Builder 의 구현체이다
+    - `NotebookBuilder`
 - **Product**
   - 결과 객체로 서로 다른 Builder 에 의해서 생성된다.
+    - `Notebook`
+  - 이외에도 Product 를 만들기 위해서 필요한 객체들을 나열해보자면
+    - `CPU` 인터페이스와 구현체인 `Intel`, `M1`
+    - `OS` 인터페이스와 구현체인 `OSX`, `Windows`
+    - `GraphicCard` 인터페이스와 구현체인 `GTX1080`, `Radeon`
+
+## Builder - ItemBuilder Interface
+
+Builder 인터페이스는 Product 생성에 필요한 Step 들을 표현할 수 있다.
+
+Step 이라고 함은 각각의 Product 를 생성하기 위한 구성들을 선언한다는 의미이다.
+
+```java
+public interface ItemBuilder {
+    void graphicCard(GraphicCard part);
+    void cpu(CPU part);
+    void os(OS os);
+}
+```
+
+## ConcreteBuilder - Desktop & Notebook Builder class
+
+실제 Builder 의 구현체로 현재는 setter 를 사용하여 Notebook 객체에 레퍼런스들을 전달해준다.
+
+```java
+public class NotebookBuilder implements ItemBuilder {
+
+    private Notebook notebook = new Notebook();
+
+    public Notebook getProduct() {
+        return notebook;
+    }
+
+    @Override
+    public void graphicCard(GraphicCard graphicCard) {
+        notebook.setGraphicCard(graphicCard);
+    }
+
+    @Override
+    public void cpu(CPU cpu) {
+        notebook.setCpu(cpu);
+    }
+
+    @Override
+    public void os(OS os) {
+        notebook.setOs(os);
+    }
+}
+```
+
+## Product - Noteboo class 와 각각의 부품들
+
+Product 는 실제 `Director` 에 의해서 생성될 대상인데, 객체 생성의 복잡성을 일부 표현하기 위해서 여러 인터페이스와 각각의 구현체를 추가해볼 생각이다.
+
+이들은 Notebook 을 생성하기 위해서 필요한 부품들이다.
+
+```java
+public interface CPU {
+    String describe();
+}
+
+public interface GraphicCard {
+    String describe();
+}
+
+public interface OS {
+    String describe();
+}
+
+public class Intel implements CPU {
+    @Override
+    public String describe() {
+        return "Intel CPU";
+    }
+}
+
+public class M1 implements CPU {
+    @Override
+    public String describe() {
+        return "M1 CPU";
+    }
+}
+
+public class GTX1080 implements GraphicCard {
+    @Override
+    public String describe() {
+        return "GTX1080 Graphic Card";
+    }
+}
+
+public class Radeon implements GraphicCard {
+    @Override
+    public String describe() {
+        return "Radeon Graphic Card";
+    }
+}
+
+public class OSX implements OS {
+    @Override
+    public String describe() {
+        return "Apple's OSX";
+    }
+}
+
+public class Windows implements OS {
+    @Override
+    public String describe() {
+        return "MS's Windows";
+    }
+}
+```
+
+이제 실제로 우리가 원하는 Product 인 객체를 정의해보자.
+
+```java
+public class Notebook {
+    private CPU cpu;
+    private GraphicCard graphicCard;
+    private OS os;
+
+    public void setCpu(CPU cpu) {
+        this.cpu = cpu;
+    }
+
+    public void setGraphicCard(GraphicCard graphicCard) {
+        this.graphicCard = graphicCard;
+    }
+
+    public void setOs(OS os) {
+        this.os = os;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "cpu=[" + cpu.describe() + "] " +
+                ", graphicCard=[" + graphicCard.describe() + "] " +
+                ", os=[" + os.describe() + "] " +
+                "} 입니다.";
+    }
+}
+```
+
+## Director - Director Class
+
+Director 는 실제로 Builder 의 구현체들을 통해서 어떤 순서로, 어떤 방식으로 Product 를 생성할지 명시해주고 생성하는 책임을 갖는다.
+
+```java
+public class Director {
+    public Notebook macBook2022(NotebookBuilder builder) {
+        builder.cpu(new M1());
+        builder.graphicCard(new Radeon());
+        builder.os(new OSX());
+        return builder.getProduct();
+    }
+
+    public Notebook macBook2021(NotebookBuilder builder) {
+        builder.cpu(new Intel());
+        builder.graphicCard(new Radeon());
+        builder.os(new OSX());
+        return builder.getProduct();
+    }
+
+    public Notebook samsungGalaxyBook(NotebookBuilder builder) {
+        builder.cpu(new Intel());
+        builder.graphicCard(new GTX1080());
+        builder.os(new Windows());
+        return builder.getProduct();
+    }
+}
+```
+
+위의 코드를 보게 된다면, Builder 를 통해서 하나의 객체를 다양한 방법을 통해서 생성할 수 있고, 이들을 각각 다른 방식으로 표현할 수 있게 된다.
 
 # 장점과 단점
 
@@ -58,3 +236,17 @@
 - 여러 개의 새로운 클래스를 생성해야 하기 때문에 시스템의 복잡성이 증가한다
 
 # 정리
+
+Builder 패턴은 복잡한 객체를 단계별로 구성함에 중점을 두고 있다.
+
+이와 같은 맥락으로는 Effective Java 에서 소개된 Builder 즉, Spring 진영에서 많이 사용되는 Lombok 의 Builder 과 맥락은 공유하고 있다.
+
+하지만 Effective Java 와 Gof 에서 말하는 Builder 는 조금 다르다.
+
+- Effective Java's Builder
+  - 점증적 생성자 패턴
+  - 변경 불가능성, 객체 일관성, 코드 가독성 중점
+  - 코딩 스타일에 중점을 둠
+- GoF's Builder
+  - 객체의 생성 방법과 조립(구성) 방법의 분리에 중점
+  - 아키텍처와 객체 지향에 중점을 둠 (이펙티브 자바보다 오래 전 출판됨)

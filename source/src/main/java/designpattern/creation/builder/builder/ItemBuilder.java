@@ -1,12 +1,11 @@
 package designpattern.creation.builder.builder;
 
-import designpattern.creation.builder.*;
+import designpattern.creation.builder.product.component.CPU;
+import designpattern.creation.builder.product.component.GraphicCard;
+import designpattern.creation.builder.product.component.OS;
 
 public interface ItemBuilder {
-    void reset();
-    void monitor(Monitor part);
     void graphicCard(GraphicCard part);
     void cpu(CPU part);
     void os(OS os);
-
 }

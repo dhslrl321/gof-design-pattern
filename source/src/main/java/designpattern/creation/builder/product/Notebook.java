@@ -1,19 +1,13 @@
 package designpattern.creation.builder.product;
 
-import designpattern.creation.builder.CPU;
-import designpattern.creation.builder.GraphicCard;
-import designpattern.creation.builder.Monitor;
-import designpattern.creation.builder.OS;
+import designpattern.creation.builder.product.component.CPU;
+import designpattern.creation.builder.product.component.GraphicCard;
+import designpattern.creation.builder.product.component.OS;
 
 public class Notebook {
     private CPU cpu;
     private GraphicCard graphicCard;
-    private Monitor monitor;
     private OS os;
-
-    public void setOs(OS os) {
-        this.os = os;
-    }
 
     public void setCpu(CPU cpu) {
         this.cpu = cpu;
@@ -23,16 +17,16 @@ public class Notebook {
         this.graphicCard = graphicCard;
     }
 
-    public void setMonitor(Monitor monitor) {
-        this.monitor = monitor;
+    public void setOs(OS os) {
+        this.os = os;
     }
 
     @Override
     public String toString() {
-        return "Notebook{" +
-                "cpu=" + cpu +
-                ", graphicCard=" + graphicCard +
-                ", monitor=" + monitor +
-                '}';
+        return "{" +
+                "cpu=[" + cpu.describe() + "] " +
+                ", graphicCard=[" + graphicCard.describe() + "] " +
+                ", os=[" + os.describe() + "] " +
+                "} 입니다.";
     }
 }
