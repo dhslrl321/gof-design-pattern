@@ -1,11 +1,9 @@
-package com.github.dhslrl321
+package com.github.dhslrl321.core
 
-import com.github.dhslrl321.core.ProxyService
-import com.github.dhslrl321.core.SimpleService
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
 
-private const val TEXT = "someTest"
+private const val ANY_TEXT = "TEXT"
 
 class ProxyTest : BehaviorSpec({
 
@@ -15,10 +13,10 @@ class ProxyTest : BehaviorSpec({
 
         `when`("sut 에게 행위") {
 
-            val actual = sut.operation(TEXT)
+            val actual = sut.operation(ANY_TEXT)
 
             then("proxy 는 `!!` 를 마지막에 붙여준다") {
-                actual.props shouldBe TEXT.plus("!!")
+                actual.props shouldBe ANY_TEXT.plus("!!")
             }
         }
     }
