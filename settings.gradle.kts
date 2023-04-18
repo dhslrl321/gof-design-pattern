@@ -1,7 +1,15 @@
-
 rootProject.name = "gof-design-pattern"
 
-include("creational", "structural", "behavioral")
+include("creational")
 
-include("structural:proxy", "structural:adapter")
+include(
+    "structural",
+    "structural:proxy",
+    "structural:adapter"
+)
+
+include(
+    "behavioral",
+    "behavioral:template-method"
+)
 
