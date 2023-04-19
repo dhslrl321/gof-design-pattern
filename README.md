@@ -13,7 +13,7 @@ kotlin 으로 구현한 Gof Design Pattern 입니다
 
 - composite pattern 을 활용한 notification system 구현
 - chain of responsibility pattern 을 활용한 배송비 계산기 구현
-- 
+- builder pattern 을 활용한 테스트 helper 
 
 ### References
 
