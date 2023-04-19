@@ -7,11 +7,13 @@ kotlin 으로 구현한 Gof Design Pattern 입니다
 - [proxy pattern](https://github.com/dhslrl321/gof-design-pattern/tree/master/structural/proxy)
   - 예제: proxy pattern 을 활용한 db caching
 - [adapter pattern](https://github.com/dhslrl321/gof-design-pattern/tree/master/structural/adapter)
-  - 예제: adapter pattern 을 활용한 legacy system integration 구현 
+  - 예제: adapter pattern 을 활용한 legacy system integration 구현
+- [composite pattern](#)
 
 ## 행위 패턴, Behavioral Pattern
 
 - [observer pattern](https://github.com/dhslrl321/gof-design-pattern/tree/master/behavioral/observer)
+- [template method pattern](https://github.com/dhslrl321/gof-design-pattern/tree/master/behavioral/template-method)
 
 ### 예제 후보
 
