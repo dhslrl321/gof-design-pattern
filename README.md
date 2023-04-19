@@ -12,10 +12,10 @@ kotlin 으로 구현한 Gof Design Pattern 입니다
 ## 행위 패턴, Behavioral Pattern
 
 - [observer pattern](https://github.com/dhslrl321/gof-design-pattern/tree/master/behavioral/observer)
-  - 예제: observer pattern 으로 구현하는 event listener
 
 ### 예제 후보
 
+- observer pattern 으로 구현하는 event listener
 - composite pattern 을 활용한 notification system 구현
 - chain of responsibility pattern 을 활용한 배송비 계산기 구현
 - builder pattern 을 활용한 테스트 helper 
