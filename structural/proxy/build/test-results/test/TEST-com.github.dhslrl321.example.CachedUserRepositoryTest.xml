@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.github.dhslrl321.example.CachedUserRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-04-18T12:21:40" hostname="jangwonikui-MacBookPro.local" time="0.001">
-  <properties/>
-  <testcase name="Then: proxy 객체에 caching 되어 select 쿼리가 호출되지 않음" classname="com.github.dhslrl321.example.CachedUserRepositoryTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
