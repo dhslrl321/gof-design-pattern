@@ -5,11 +5,11 @@ include("creational")
 include(
     "structural",
     "structural:proxy",
-    "structural:adapter"
+    "structural:adapter",
 )
 
 include(
     "behavioral",
-    "behavioral:template-method"
+    "behavioral:template-method",
+    "behavioral:observer",
 )
-
